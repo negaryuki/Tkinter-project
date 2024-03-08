@@ -23,5 +23,17 @@ entry.pack()
 
 button = ttk.Button(master=root, text="button", command=button_func)
 button.pack()
+# ---------------------------------------------------------------------
+
+string_var2 = tk.StringVar(value="test")
+
+label2 = ttk.Label(master=root, text='label', textvariable=string_var2)
+label2.pack()
+
+entry2 = ttk.Entry(master=root, textvariable=string_var2)
+entry2.pack()
+
+entry3 = ttk.Entry(master=root, textvariable=string_var2)
+entry3.pack()
 
 root.mainloop()
