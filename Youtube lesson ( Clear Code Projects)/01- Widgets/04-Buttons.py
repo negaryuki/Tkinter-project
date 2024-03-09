@@ -64,7 +64,7 @@ check_bool = tk.BooleanVar()
 exercise_radio1 = ttk.Radiobutton(root, text="Radio A", value='A', command=radio_func, variable=radio_string)
 exercise_radio2 = ttk.Radiobutton(root, text="Radio B", value='B', command=radio_func,variable=radio_var)
 
-exercise_check = ttk.Checkbutton(root, text="exercise check box", command=radio_func, variable= radio_string)
+exercise_check = ttk.Checkbutton(root, text="exercise check box", command= lambda: print(radio_string.get()), variable= radio_string)
 
 exercise_radio1.pack()
 exercise_radio2.pack()
