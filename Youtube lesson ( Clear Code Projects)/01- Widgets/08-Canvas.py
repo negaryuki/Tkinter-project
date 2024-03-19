@@ -38,9 +38,19 @@ def draw_on_canvas(event):
     canvas.create_oval((x - brush_size / 2, y - brush_size / 2, x + brush_size / 2, y + brush_size / 2), fill='black')
 
 
-brush_size = 10
-canvas.bind('<Motion>', draw_on_canvas)
+def brush_size_adjust(event):
+    global brush_size
+    if event.delta > 0:
+        brush_size += 4
+    else:
+        brush_size -= 4
 
+    brush_size = max(0, min(brush_size, 50))
+
+
+brush_size = 2
+canvas.bind('<Motion>', draw_on_canvas)
+canvas.bind('<MouseWheel>', brush_size_adjust)
 
 # run
 root.mainloop()
