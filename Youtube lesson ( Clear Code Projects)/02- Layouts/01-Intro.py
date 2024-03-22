@@ -20,5 +20,18 @@ button.pack()
 
 label2 = ttk.Label(root, text='A Label outside of the Frame')
 label2.pack(side='left')
+
+# Exercise:
+
+frame2 = ttk.Frame(root, borderwidth=10, relief=tk.RIDGE)
+frame2.pack(side='left')
+
+label3 = tk.Label(frame2, text='Test Label')
+label3.pack()
+button3 = tk.Button(frame2, text='Test Button')
+button3.pack()
+entry3 = tk.Entry(frame2)
+entry3.pack()
+
 # Run
 root.mainloop()
