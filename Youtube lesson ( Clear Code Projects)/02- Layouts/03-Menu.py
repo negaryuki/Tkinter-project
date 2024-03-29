@@ -19,10 +19,19 @@ menu.add_cascade(label="File", menu=file_menu)
 # Sub Menu 2
 help_menu = tk.Menu(menu, tearoff=False)
 menu.add_cascade(label="Help", menu=help_menu)
-help_menu.add_command(label="Help Me", command=lambda: print("Help"))
+help_menu.add_command(label="Help Me", command=lambda: print(help_check_string.get()))
 
 help_check_string = tk.StringVar()
-help_menu.add_checkbutton(label='check',onvalue='on', offvalue= 'off', variable=help_check_string)
+help_menu.add_checkbutton(label='check', onvalue='on', offvalue='off', variable=help_check_string)
+
+# Menu Button
+
+menu_button = ttk.Menubutton(root, text="Menu Button")
+menu_button.pack()
+button_sub = tk.Menu(menu_button, tearoff=False)
+button_sub.add_command(label = "Entry", command= lambda: print("Test Test"))
+button_sub.add_checkbutton(label="Check")
+menu_button.configure(menu = button_sub)
 
 root.configure(menu=menu)
 # Run
