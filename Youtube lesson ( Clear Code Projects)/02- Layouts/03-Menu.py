@@ -30,10 +30,10 @@ exercise_menu.add_command(label="Test")
 menu.add_cascade(label="Exercise", menu=exercise_menu)
 
 exercise_sub = tk.Menu(menu, tearoff=False)
+exercise_sub.add_command(label="more and more", command=lambda: print("Helloo"))
 exercise_menu.add_cascade(label='Exercise Sub Menu', menu=exercise_sub)
 
 # Menu Button
-
 menu_button = ttk.Menubutton(root, text="Menu Button")
 menu_button.pack()
 button_sub = tk.Menu(menu_button, tearoff=False)
@@ -42,5 +42,6 @@ button_sub.add_checkbutton(label="Check")
 menu_button.configure(menu=button_sub)
 
 root.configure(menu=menu)
+
 # Run
 root.mainloop()
