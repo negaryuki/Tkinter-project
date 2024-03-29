@@ -26,8 +26,11 @@ help_menu.add_checkbutton(label='check', onvalue='on', offvalue='off', variable=
 
 # Sub menu 3
 exercise_menu = tk.Menu(menu, tearoff=False)
-exercise_menu.add_command(label="exercise")
+exercise_menu.add_command(label="Test")
 menu.add_cascade(label="Exercise", menu=exercise_menu)
+
+exercise_sub = tk.Menu(menu, tearoff=False)
+exercise_menu.add_cascade(label='Exercise Sub Menu', menu=exercise_sub)
 
 # Menu Button
 
