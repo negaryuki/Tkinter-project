@@ -24,14 +24,19 @@ help_menu.add_command(label="Help Me", command=lambda: print(help_check_string.g
 help_check_string = tk.StringVar()
 help_menu.add_checkbutton(label='check', onvalue='on', offvalue='off', variable=help_check_string)
 
+# Sub menu 3
+exercise_menu = tk.Menu(menu, tearoff=False)
+exercise_menu.add_command(label="exercise")
+menu.add_cascade(label="Exercise", menu=exercise_menu)
+
 # Menu Button
 
 menu_button = ttk.Menubutton(root, text="Menu Button")
 menu_button.pack()
 button_sub = tk.Menu(menu_button, tearoff=False)
-button_sub.add_command(label = "Entry", command= lambda: print("Test Test"))
+button_sub.add_command(label="Entry", command=lambda: print("Test Test"))
 button_sub.add_checkbutton(label="Check")
-menu_button.configure(menu = button_sub)
+menu_button.configure(menu=button_sub)
 
 root.configure(menu=menu)
 # Run
