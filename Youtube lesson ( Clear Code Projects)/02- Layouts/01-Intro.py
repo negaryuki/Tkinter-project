@@ -1,37 +1,28 @@
 import tkinter as tk
 from tkinter import ttk
 
-# Window
+# window
 root = tk.Tk()
+root.title('Layout intro')
 root.geometry('600x400')
-root.title('Frames and Parenting Intro')
 
-# Frame
-frame = ttk.Frame(root, width=100, height=200, borderwidth=10, relief=tk.RIDGE)
-frame.propagate(True)  # the size of a frame is generally adjusted by its children. we can set in off by this function
-frame.pack(side='left')
+# widgets
+label1 = tk.Label(root, text='Label 1',
+                  background='red')  # I used tk instead of ttk , because my system did not support ttk colors
+label2 = tk.Label(root, text='Label 2', background='blue')
 
-# Master setting (Parenting)
-label = ttk.Label(frame, text=' A Label in the Frame')
-label.pack()
+# pack
+#label1.pack(side='left', expand=True, fill='x')
+#label2.pack(side='left', expand=True, fill='both')
 
-button = ttk.Button(frame, text='A Button in the Frame')
-button.pack()
+# Grid
+root.columnconfigure(0, weight=1)
+root.columnconfigure(1, weight=1)
+root.columnconfigure(2, weight=2)
+root.rowconfigure(0, weight=1)
+root.rowconfigure(1, weight=1)
 
-label2 = ttk.Label(root, text='A Label outside of the Frame')
-label2.pack(side='left')
-
-# Exercise:
-
-frame2 = ttk.Frame(root, borderwidth=10, relief=tk.RIDGE)
-frame2.pack(side='left')
-
-label3 = tk.Label(frame2, text='Test Label')
-label3.pack()
-button3 = tk.Button(frame2, text='Test Button')
-button3.pack()
-entry3 = tk.Entry(frame2)
-entry3.pack()
-
-# Run
+label1.grid(row=0,column=1, sticky= 'nsew')  # to which direction should the widget stick
+label2.grid(row=1,column=1,sticky='nsew', columnspan= 2)
+# run
 root.mainloop()
