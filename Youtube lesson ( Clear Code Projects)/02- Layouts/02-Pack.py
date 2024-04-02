@@ -13,10 +13,10 @@ label3 = tk.Label(root, text='Last of the labels', background='green')
 button = tk.Button(root, text='Button')
 
 # Layout
-label1.pack(side='top', fill='both', ipady=50, padx=50)
-label2.pack(side='top', expand=True, fill='both')
+label1.pack(side='top', fill='both', ipady=50, padx=10, pady=10)
+label2.pack(side='left', expand=True, fill='both')
 label3.pack(side='top', fill='both', expand=True)
-button.pack(side='top', fill='x')
+button.pack(side='top', fill='x', expand= True)
 
 # run
 root.mainloop()
