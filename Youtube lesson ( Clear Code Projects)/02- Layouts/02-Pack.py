@@ -16,7 +16,7 @@ button = tk.Button(root, text='Button')
 label1.pack(side='top', fill='both', ipady=50, padx=10, pady=10)
 label2.pack(side='left', expand=True, fill='both')
 label3.pack(side='top', fill='both', expand=True)
-button.pack(side='top', fill='x', expand= True)
+button.pack(side='top', fill='both', expand= True)
 
 # run
 root.mainloop()
